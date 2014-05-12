@@ -18,13 +18,13 @@ def filter_weibo_user():
         print file
         for line in open(pathpre + file ,'r'):
             items = line.split('，')
-            ss = items[1] + items[11]
+            ss = items[1] + items[11] + items[9]
             ss = ss.lower()
             if items[0] in uidset:
                 continue
             uidset.add(items[0])
             for job in jobs:
-                if ss.find(job) != -1:
+                if ss.count(job) >1:
                     #print ss,'\t',job,'\t',items[8],'\t',pre+items[0]
                     fout.write(ss+'\t'+job+'\t'+items[8]+'\t'+pre+items[0]+'\n')
 

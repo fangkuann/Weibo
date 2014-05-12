@@ -20,7 +20,7 @@ def readNetwork():
                 followees = items[2].split('；')
                 for user in followees:
                     if user not in socialNet:
-                        socialNet[user] = set([uid1])
+                        socialNet[user] = set([uid1]);
 
 
 readNetwork()
